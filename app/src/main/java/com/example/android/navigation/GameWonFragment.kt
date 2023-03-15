@@ -50,7 +50,7 @@ class GameWonFragment : Fragment() {
     }
 
     private fun getShareIntent(): Intent {
-        val args = GameWonFragmentArgs.fromBundle(arguments)
+        val args = GameWonFragmentArgs.fromBundle(requireArguments())
         return ShareCompat.IntentBuilder.from(requireActivity()) //possible error, in original this is just "activity" and not requireActivity()
             .setText(getString(R.string.share_success_text, args.numCorrect, args.numQuestions))
             .setType("text/plain")
